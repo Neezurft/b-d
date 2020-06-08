@@ -6,7 +6,7 @@
 
 ### Quick Start
 
-- To run this project locally jsut follow the steps below (you will need a computer with Node and Yarn installed).
+- To run this project locally just follow the steps below (you will need a computer with Node and Yarn installed).
 
 1. Run `yarn` to install dependencies.
 2. Run `yarn start` to compile and run the project.
