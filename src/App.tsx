@@ -1,26 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Transactions } from "./components/Transactions";
+import { createUseStyles, useTheme } from "react-jss";
+import { Theme } from "./theme";
 
 function App() {
+  const theme = useTheme();
+  const classes = useStyles({ theme });
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={classes.wrapper}>
+      <Transactions />
     </div>
   );
 }
+
+const useStyles = createUseStyles((theme: Theme) => ({
+  "@global": {
+    body: {
+      backgroundColor: theme.backgroundDark,
+      fontFamily: theme.fontFamily,
+      color: theme.color,
+      "& ::-webkit-scrollbar": {
+        display: "none",
+      },
+    },
+  },
+  wrapper: {
+    height: "100vh",
+    width: "100%",
+    display: "flex",
+    justifyContent: "center",
+    overflow: "scroll",
+  },
+}));
 
 export default App;
