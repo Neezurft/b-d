@@ -25,9 +25,9 @@ export function Transactions() {
   useEffect(() => {
     const load = async () => {
       try {
-        // a little delay for demo purposes...
         const providerTransactions = await fetchTransactionsByProvider();
 
+        // a little delay for demo purposes...
         await new Promise((res) => setTimeout(res, 1000));
         setTransactions(providerTransactions);
         if (isInvalid(providerTransactions)) {

@@ -2,9 +2,9 @@ import React from "react";
 import { createUseStyles, useTheme } from "react-jss";
 import { Theme } from "../theme";
 
-type DropDownProps = { values: Readonly<string[]>; selectedValue: string; onValSelected: (val: string) => void };
+type DropDownProps<T extends string> = { values: Readonly<T[]>; selectedValue: T; onValSelected: (val: T) => void };
 
-export function DropDown<T extends string>({ values, selectedValue, onValSelected }: DropDownProps) {
+export function DropDown<T extends string>({ values, selectedValue, onValSelected }: DropDownProps<T>) {
   const theme = useTheme();
   const classes = useStyles({ theme });
 
